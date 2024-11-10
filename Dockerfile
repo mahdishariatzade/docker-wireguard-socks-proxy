@@ -8,7 +8,7 @@
 
 FROM alpine:latest
 
-RUN apk add --update-cache dante-server wireguard-tools openresolv ip6tables \
+RUN apk add --update-cache dante-server wireguard-tools openresolv ip6tables curl \
   && rm -rf /var/cache/apk/*
 
 COPY ./sockd.conf /etc/
