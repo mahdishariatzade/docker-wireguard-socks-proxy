@@ -6,10 +6,9 @@
 #
 # `start.sh` is a one line script, feel free to tweak it e.g. the port mapping
 
-FROM alpine
+FROM alpine:latest
 
-RUN echo "http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
-  && apk add --update-cache dante-server wireguard-tools openresolv ip6tables \
+RUN apk add --update-cache dante-server wireguard-tools openresolv ip6tables \
   && rm -rf /var/cache/apk/*
 
 COPY ./sockd.conf /etc/
